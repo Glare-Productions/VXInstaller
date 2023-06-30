@@ -50,7 +50,7 @@ namespace VXInstaller
 		/// <summary>
 		/// Collect plugins and paths and whatever we need.
 		/// </summary>
-		internal void Init()
+		internal void Init(int version)
 		{
 			// retrieve all plugins in the plugin dir
 			var plugins = FileSystem.GetPlugins();
@@ -68,7 +68,7 @@ namespace VXInstaller
 			}
 
 			// also set text for the VX dir
-			var dst = FileSystem.GetVXDir();
+			var dst = FileSystem.GetVXDir(version);
 			TextInstallDir = string.IsNullOrEmpty(dst)
 				? Properties.Resources.InstallDirTextError
 				: Properties.Resources.InstallDirTextFound;

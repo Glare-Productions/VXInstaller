@@ -80,14 +80,14 @@ namespace VXInstaller
 		/// documents folder.
 		/// </summary>
 		/// <returns>The VX directory or string.Empty in case of an error</returns>
-		internal static string GetVXDir()
+		internal static string GetVXDir(int version)
 		{
 			try
 			{
 				string doc = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 				if (Directory.Exists(doc))
 				{
-					string vx = Path.Combine(doc, "Ventuz6", "Vx");
+					string vx = Path.Combine(doc, $"Ventuz{version}", "Vx");
 					if (!Directory.Exists(doc))
 					{
 						Directory.CreateDirectory(vx);

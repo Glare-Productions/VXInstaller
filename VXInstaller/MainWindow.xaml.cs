@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.WindowsAPICodePack.Dialogs;
@@ -17,11 +18,24 @@ namespace VXInstaller
 			DataContext = InstallMan;
 			InitializeComponent();
 
-			InstallMan.Init();
+			InstallMan.Init(DetermineVersion());
 			ListPlugins.Focus();
 		}
-		
-		
+
+		private int DetermineVersion()
+		{
+			// default to Ventuz 6
+			int version = 6;
+
+			string pattern = @"\d+";
+			var match = Regex.Match(System.AppDomain.CurrentDomain.FriendlyName, pattern);
+			if (match.Success && Int32.TryParse(match.Value, out int num)) 
+			{
+				version = num;
+			}
+
+			return version;
+		}
 
 		#region Event handlers
 
