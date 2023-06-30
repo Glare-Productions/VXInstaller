@@ -48,7 +48,7 @@ Finally, a click on install will attempt to install all selected plugins to the 
 
 Ventuz plugins have been introduced with a late version of Ventuz 6, not long before Ventuz 7 was released. Currently, both Ventuz 6 and 7 will be used - and they use different VX folders. As you might have noticed, the VXInstaller does not offer a selection for the Ventuz version. The reason for that is simple: the tool is supposed to be a convenient way for an unexperienced user to install the plugins required to run the project. Any additional option requires documentation and offers a possible point of failure. We've therefore decided not to offer a version selection in the application's interface.
 
-However, we also don't want to compile different executabled. Therefore we chose a rather implicit approach: the application's name will be checked for a version which will then be used. So by renaming the executable, you can select the version. Here are some examples:
+However, we also don't want to compile different executables. Therefore, we chose a rather implicit approach: the application's name will be checked for a version which will then be used. So by renaming the executable, you can select the version. Here are some examples:
 
 Executable | Ventuz version
 :---|:---
