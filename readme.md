@@ -43,3 +43,18 @@ The application finds the user's documents folder and adds the part to the VX fo
 The application also shows a list of all plugins it has found. They are all pre-selected. The user can change the selection by clicking the items in the list.
 
 Finally, a click on install will attempt to install all selected plugins to the given destination.
+
+## Ventuz version
+
+Ventuz plugins have been introduced with a late version of Ventuz 6, not long before Ventuz 7 was released. Currently, both Ventuz 6 and 7 will be used - and they use different VX folders. As you might have noticed, the VXInstaller does not offer a selection for the Ventuz version. The reason for that is simple: the tool is supposed to be a convenient way for an unexperienced user to install the plugins required to run the project. Any additional option requires documentation and offers a possible point of failure. We've therefore decided not to offer a version selection in the application's interface.
+
+However, we also don't want to compile different executabled. Therefore we chose a rather implicit approach: the application's name will be checked for a version which will then be used. So by renaming the executable, you can select the version. Here are some examples:
+
+Executable | Ventuz version
+:---|:---
+VX6Installer.exe | Ventuz 6
+VXInstaller6.exe | Ventuz 6
+VX7Installer.exe | Ventuz 7
+VXInstaller7.exe | Ventuz 7
+
+> **Note:** this is a bit of a hack, but again: we want to keep the install process for the customer as simple as possible. Feel free to fork this repository and implement a version selector.
